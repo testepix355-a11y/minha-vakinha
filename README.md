@@ -1,1 +1,1 @@
-# minha-vakinha
+Site da campanha em construção.
