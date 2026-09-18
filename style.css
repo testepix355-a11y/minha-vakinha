@@ -1,0 +1,439 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #18a66b;
+  --primary-dark: #128455;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --background: #f5f7f8;
+  --white: #ffffff;
+  --border: #e5e7eb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--background);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.topbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav-button,
+.main-button,
+.whatsapp-button {
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: .2s ease;
+}
+
+.nav-button {
+  background: var(--primary);
+  color: white;
+  padding: 10px 18px;
+}
+
+.nav-button:hover,
+.main-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.hero {
+  padding: 48px 0;
+  background: linear-gradient(180deg, #eefaf5 0%, var(--background) 100%);
+}
+
+.campaign-grid {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.image-placeholder {
+  min-height: 440px;
+  border-radius: 18px;
+  background: #dfe8e4;
+  border: 2px dashed #aebeb8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #66756f;
+  text-align: center;
+}
+
+.placeholder-icon {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: white;
+  font-size: 44px;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.image-placeholder p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.image-placeholder small {
+  margin-top: 5px;
+}
+
+.campaign-card,
+.donation-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.05);
+}
+
+.tag {
+  color: var(--primary-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .8px;
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.1;
+  margin: 12px 0;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.amounts {
+  display: flex;
+  justify-content: space-between;
+  margin: 28px 0 12px;
+}
+
+.amounts div {
+  display: flex;
+  flex-direction: column;
+}
+
+.amounts strong {
+  font-size: 24px;
+}
+
+.amounts span,
+.progress-info {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.target {
+  text-align: right;
+}
+
+.progress {
+  height: 12px;
+  background: #e7ecea;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 99px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+
+.main-button {
+  display: block;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 14px;
+  margin-top: 24px;
+  font-size: 16px;
+}
+
+.content {
+  padding: 58px 0;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 50px;
+  align-items: start;
+}
+
+article h2,
+.donation-card h2,
+.share-box h2 {
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+
+article p {
+  color: #4b5563;
+  margin-bottom: 18px;
+}
+
+.help-list {
+  margin-top: 24px;
+}
+
+.help-item {
+  display: flex;
+  gap: 15px;
+  margin: 18px 0;
+}
+
+.help-item > span {
+  flex: 0 0 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #e3f7ee;
+  color: var(--primary-dark);
+  font-weight: 800;
+}
+
+.help-item strong {
+  display: block;
+}
+
+.help-item p {
+  margin: 2px 0 0;
+  font-size: 14px;
+}
+
+.donation-card h2 {
+  margin-bottom: 5px;
+}
+
+.donation-card > p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.qr-placeholder {
+  height: 220px;
+  width: 220px;
+  margin: 0 auto 22px;
+  border: 2px dashed #b7c5bf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #65736e;
+  background: #f6f9f7;
+}
+
+.qr-placeholder div {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.qr-placeholder small {
+  font-size: 11px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.pix-row {
+  display: flex;
+}
+
+.pix-row input {
+  min-width: 0;
+  flex: 1;
+  padding: 11px;
+  border: 1px solid var(--border);
+  border-radius: 8px 0 0 8px;
+  color: #555;
+}
+
+.pix-row button {
+  border: 0;
+  background: #e8f7f0;
+  color: var(--primary-dark);
+  font-weight: 800;
+  padding: 0 15px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+.copy-message {
+  min-height: 20px;
+  color: var(--primary-dark);
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.secure-note {
+  font-size: 12px !important;
+  margin-top: 14px;
+  margin-bottom: 0 !important;
+}
+
+.share-section {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 34px 0;
+}
+
+.share-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.share-box h2 {
+  margin-bottom: 3px;
+}
+
+.share-box p {
+  color: var(--muted);
+}
+
+.whatsapp-button {
+  background: #25d366;
+  color: white;
+  padding: 13px 20px;
+  white-space: nowrap;
+}
+
+footer {
+  padding: 34px 0;
+  background: #17201d;
+  color: #d9e0dd;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 8px 0;
+  color: #aeb9b4;
+}
+
+.footer-content small {
+  color: #84918c;
+}
+
+@media (max-width: 800px) {
+  .campaign-grid,
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-placeholder {
+    min-height: 300px;
+  }
+
+  .content-grid {
+    gap: 35px;
+  }
+
+  .share-box {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .whatsapp-button {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    height: 62px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 25px 0;
+  }
+
+  .campaign-card,
+  .donation-card {
+    padding: 22px;
+  }
+
+  .amounts strong {
+    font-size: 19px;
+  }
+
+  .qr-placeholder {
+    width: 190px;
+    height: 190px;
+  }
+}

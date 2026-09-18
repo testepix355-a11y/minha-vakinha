@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Campanha de arrecadação online">
+  <title>Minha Vakinha Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="logo">Minha<span>Vakinha</span></div>
+      <a href="#doar" class="nav-button">Doar agora</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container campaign-grid">
+        <div class="image-placeholder">
+          <div class="placeholder-icon">♡</div>
+          <p>Adicione aqui a foto da campanha</p>
+          <small>Substitua este espaço por sua imagem</small>
+        </div>
+
+        <div class="campaign-card">
+          <span class="tag">CAMPANHA DE ARRECADAÇÃO</span>
+          <h1>Ajude nossa campanha</h1>
+          <p class="subtitle">Toda contribuição faz a diferença. Juntos podemos alcançar esse objetivo.</p>
+
+          <div class="amounts">
+            <div>
+              <strong>R$ 0,00</strong>
+              <span>arrecadado</span>
+            </div>
+            <div class="target">
+              <strong>R$ 10.000,00</strong>
+              <span>meta</span>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar" style="width: 0%"></div>
+          </div>
+          <div class="progress-info">
+            <span>0% da meta</span>
+            <span>0 apoiadores</span>
+          </div>
+
+          <a href="#doar" class="main-button">♡ Quero ajudar</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container content-grid">
+        <article>
+          <h2>Sobre a campanha</h2>
+          <p>
+            Olá! Esta é uma página de campanha criada para receber contribuições
+            de pessoas que desejam ajudar. Aqui você poderá contar, com detalhes,
+            a história da campanha, explicar por que está arrecadando e mostrar
+            como os valores serão utilizados.
+          </p>
+          <p>
+            Cada contribuição, independentemente do valor, será muito importante.
+            Se você não puder contribuir financeiramente, compartilhar esta página
+            também ajuda bastante.
+          </p>
+
+          <h2>Como você pode ajudar?</h2>
+          <div class="help-list">
+            <div class="help-item"><span>1</span><div><strong>Faça uma contribuição</strong><p>Escolha o valor que deseja doar.</p></div></div>
+            <div class="help-item"><span>2</span><div><strong>Compartilhe</strong><p>Envie a campanha para amigos e familiares.</p></div></div>
+            <div class="help-item"><span>3</span><div><strong>Acompanhe</strong><p>Veja a evolução da arrecadação.</p></div></div>
+          </div>
+        </article>
+
+        <aside id="doar" class="donation-card">
+          <h2>Faça sua doação</h2>
+          <p>Use o Pix para contribuir com a campanha.</p>
+
+          <div class="qr-placeholder">
+            <div>QR CODE</div>
+            <small>Seu QR Code aparecerá aqui</small>
+          </div>
+
+          <label for="pix">Chave Pix</label>
+          <div class="pix-row">
+            <input id="pix" type="text" value="SUA-CHAVE-PIX-AQUI" readonly>
+            <button onclick="copyPix()">Copiar</button>
+          </div>
+          <div id="copy-message" class="copy-message"></div>
+
+          <p class="secure-note">🔒 Confira os dados antes de realizar o pagamento.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="share-section">
+      <div class="container share-box">
+        <div>
+          <h2>Ajude compartilhando</h2>
+          <p>Quanto mais pessoas conhecerem a campanha, maior será o alcance.</p>
+        </div>
+        <button class="whatsapp-button" onclick="shareWhatsApp()">Compartilhar no WhatsApp</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="logo">Minha<span>Vakinha</span></div>
+      <p>Campanha de arrecadação online</p>
+      <small>© 2026 Minha Vakinha. Todos os direitos reservados.</small>
+    </div>
+  </footer>
+
+  <script>
+    function copyPix() {
+      const pix = document.getElementById("pix");
+      navigator.clipboard.writeText(pix.value).then(() => {
+        document.getElementById("copy-message").textContent = "Chave Pix copiada!";
+      }).catch(() => {
+        pix.select();
+        document.execCommand("copy");
+        document.getElementById("copy-message").textContent = "Chave Pix copiada!";
+      });
+    }
+
+    function shareWhatsApp() {
+      const text = encodeURIComponent(
+        "Olá! Estou compartilhando esta campanha de arrecadação. Se puder ajudar ou compartilhar, será muito importante: " +
+        window.location.href
+      );
+      window.open("https://wa.me/?text=" + text, "_blank");
+    }
+  </script>
+</body>
+</html>
